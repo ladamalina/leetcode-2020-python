@@ -1,6 +1,9 @@
 import logging
 from typing import List
 
+logging.basicConfig(level=logging.DEBUG)
+logger = logging.getLogger(__name__)
+
 
 class Solution:
     def maxArea(self, height: List[int]) -> int:
@@ -11,21 +14,21 @@ class Solution:
         i2 = len(height) - 1
         max_area_bounds = [i1, i2]
         max_area = area(height, *max_area_bounds)
-        logging.info(f'level 0: max_area_bounds={max_area_bounds}, max_area={max_area}')
+        logging.debug(f'level 0: max_area_bounds={max_area_bounds}, max_area={max_area}')
         while i1 < i2:
-            logging.info(f'level 1: i1={i1}, i2={i2}, height[i1]={height[i1]}, height[i2]={height[i2]}')
+            logging.debug(f'level 1: i1={i1}, i2={i2}, height[i1]={height[i1]}, height[i2]={height[i2]}')
             if height[i1] < height[i2]:
                 next_i1 = i1 + 1
                 while next_i1 < i2 and height[i1] >= height[next_i1]:
                     next_i1 += 1
-                logging.info(f'level 2: next_i1={next_i1}, height[next_i1]={height[next_i1]}')
+                logging.debug(f'level 2: next_i1={next_i1}, height[next_i1]={height[next_i1]}')
                 if next_i1 < i2:
                     new_area = area(height, next_i1, i2)
                     logging.info(f'level 2: new_area={new_area}')
                     if new_area > max_area:
                         max_area = new_area
                         max_area_bounds = [next_i1, i2]
-                        logging.info(f'level 2: max_area_bounds={max_area_bounds}, max_area={max_area}')
+                        logging.debug(f'level 2: max_area_bounds={max_area_bounds}, max_area={max_area}')
                     i1 = next_i1
                 else:
                     break
@@ -33,20 +36,20 @@ class Solution:
                 next_i2 = i2 - 1
                 while i1 < next_i2 and height[next_i2] <= height[i2]:
                     next_i2 -= 1
-                logging.info(f'level 2: next_i2={next_i2}, height[next_i2]={height[next_i2]}')
+                logging.debug(f'level 2: next_i2={next_i2}, height[next_i2]={height[next_i2]}')
                 if i1 < next_i2:
                     new_area = area(height, i1, next_i2)
-                    logging.info(f'level 2: new_area={new_area}')
+                    logging.debug(f'level 2: new_area={new_area}')
                     if new_area > max_area:
                         max_area = new_area
                         max_area_bounds = [i1, next_i2]
-                        logging.info(f'level 2: max_area_bounds={max_area_bounds}, max_area={max_area}')
+                        logging.debug(f'level 2: max_area_bounds={max_area_bounds}, max_area={max_area}')
                     i2 = next_i2
                 else:
                     break
 
-        logging.info(f'Returning max_area={max_area}')
-        logging.info('')
+        logging.debug(f'Returning max_area={max_area}')
+        logging.debug('')
 
         return max_area
 
