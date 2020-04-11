@@ -1,3 +1,9 @@
+import logging
+
+logging.basicConfig(level=logging.DEBUG)
+logger = logging.getLogger(__name__)
+
+
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
         substr_ch = dict()  # char: index
