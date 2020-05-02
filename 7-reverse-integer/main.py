@@ -9,11 +9,17 @@ class Solution:
         if x == 0:
             return 0
 
-        is_positive = x > 0
         tmp_x = abs(x)
         reversed_x = 0
 
         while tmp_x > 0:
+            digit = tmp_x % 10
+            reversed_x = reversed_x * 10 + digit
+            tmp_x = tmp_x // 10
+
+        reversed_x = reversed_x if x > 0 else reversed_x * -1
+        reversed_x = reversed_x if (-0x7fffffff) <= reversed_x <= (0x7fffffff-1) else 0
+        return reversed_x
 
 
 def main():
