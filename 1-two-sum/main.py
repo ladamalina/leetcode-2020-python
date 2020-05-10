@@ -1,5 +1,8 @@
 from typing import List
 
+logging.basicConfig(level=logging.DEBUG)
+logger = logging.getLogger(__name__)
+
 
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
