@@ -1,4 +1,9 @@
+import logging
 import math
+
+logging.basicConfig(level=logging.DEBUG)
+logger = logging.getLogger(__name__)
+
 
 class Solution:
     def isPalindrome(self, x: int) -> bool:
