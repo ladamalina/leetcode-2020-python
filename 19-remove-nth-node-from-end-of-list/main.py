@@ -17,7 +17,7 @@ class ListNode:
 
 class Solution:
     def removeNthFromEnd(self, head: ListNode, n: int) -> ListNode:
-        logging.debug(f'head={head}, n={n}')
+        logger.debug(f'head={head}, n={n}')
         nodes = dict()
         current_node = head
         total_nodes = 1
@@ -31,7 +31,7 @@ class Solution:
             else:
                 break
 
-        logging.debug(f'total_nodes={total_nodes}')
+        logger.debug(f'total_nodes={total_nodes}')
         if n == total_nodes == 1:
             return None
         elif n == total_nodes:
