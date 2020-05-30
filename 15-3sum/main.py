@@ -29,12 +29,12 @@ class Solution:
         return results
 
     def threeSum(self, nums: List[int]) -> List[List[int]]:
-        logging.debug(f'nums={nums}')
+        logger.debug(f'nums={nums}')
         results = set()
         for i, num1 in enumerate(nums[:-2]):
             last_array = nums[i+1:]
             last_nums = self.twoSum(last_array, 0 - num1)
-            logging.debug(f'i={i}, num1={num1}, last_nums={last_nums}')
+            logger.debug(f'i={i}, num1={num1}, last_nums={last_nums}')
             for pair_i in last_nums:
                 num2 = last_array[pair_i[0]]
                 num3 = last_array[pair_i[1]]
@@ -42,7 +42,7 @@ class Solution:
                 results.add(uniq_nums)
 
         results = sorted([[int(i) for i in r.split(',')] for r in results])
-        logging.debug(results)
+        logger.debug(results)
         return results
 
 def main():
