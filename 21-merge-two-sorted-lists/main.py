@@ -45,7 +45,7 @@ class Solution:
                 del result_tail
                 result_tail = next_node
 
-        # logging.debug(f'return result_head={result_head}')
+        # logger.debug(f'return result_head={result_head}')
         return result_head
 
 
