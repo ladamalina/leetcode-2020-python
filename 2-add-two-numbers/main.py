@@ -1,5 +1,8 @@
 import logging
 
+logging.basicConfig(level=logging.DEBUG)
+logger = logging.getLogger(__name__)
+
 
 # Definition for singly-linked list.
 class ListNode:
@@ -24,7 +27,7 @@ class Solution:
             cur_l1_val = cur_l1.val if cur_l1 else 0
             cur_l2_val = cur_l2.val if cur_l2 else 0
             sum_cur = cur_l1_val + cur_l2_val + overflow
-            # logging.warning(f'cur_l1_val={cur_l1_val}, cur_l2_val={cur_l2_val}, overflow={overflow}, sum_cur={sum_cur}')
+            logging.debug(f'cur_l1_val={cur_l1_val}, cur_l2_val={cur_l2_val}, overflow={overflow}, sum_cur={sum_cur}')
 
             cur_val = sum_cur % 10
             overflow = sum_cur // 10
@@ -42,7 +45,7 @@ class Solution:
 
         if overflow:
             last_node.next = ListNode(overflow)
-        # logging.warning(f'first_node={first_node}')
+        logging.debug(f'first_node={first_node}')
 
         return first_node
 
