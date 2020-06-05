@@ -1,3 +1,9 @@
+import logging
+
+logging.basicConfig(level=logging.DEBUG)
+logger = logging.getLogger(__name__)
+
+
 class Solution:
     def reverse(self, x: int) -> int:
         if x == 0:
