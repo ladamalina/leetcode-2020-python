@@ -9,7 +9,7 @@ logger = logging.getLogger(__name__)
 class Solution:
     def isPalindrome(self, s: str) -> bool:
         logger.debug("-" * 40)
-        s_clean = re.sub(r'([^a-zA-Z])+', '', s)
+        s_clean = re.sub(r'([^a-zA-Z0-9])+', '', s)
         s_clean = s_clean.lower()
         logger.debug(f"{s=}, {s_clean=}")
         half = len(s_clean) // 2
