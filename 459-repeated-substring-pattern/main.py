@@ -7,6 +7,8 @@ logger = logging.getLogger(__name__)
 
 class Solution:
     def repeatedSubstringPattern(self, s: str) -> bool:
+        logger.debug('-' * 40)
+        logger.debug(f'{s=}')
         if len(s) <= 1:
             return False
 
@@ -29,8 +31,9 @@ class Solution:
     def checkPattern(self, s: str, sub_len: int) -> bool:
         if len(s) % sub_len != 0:
             return False
-        for i in range(sub_len, len(s)):
-            if s[i] != s[i % sub_len]:
+        num = len(s) // sub_len
+        for i in range(1, num):
+            if s[:sub_len] != s[sub_len*i:sub_len*(i+1)]:
                 return False
 
         return True
