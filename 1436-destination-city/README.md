@@ -1,7 +1,7 @@
-# 1431. Kids With the Greatest Number of Candies
+# 1436. Destination City
 
-Given the array candies and the integer extraCandies, where candies[i] represents the number of candies that the ith kid has.
+You are given the array paths, where paths[i] = [cityAi, cityBi] means there exists a direct path going from cityAi to cityBi. Return the destination city, that is, the city without any path outgoing to another city.
 
-For each kid check if there is a way to distribute extraCandies among the kids such that he or she can have the greatest number of candies among them. Notice that multiple kids can have the greatest number of candies.
+It is guaranteed that the graph of paths forms a line without any loop, therefore, there will be exactly one destination city.
 
-<https://leetcode.com/problems/kids-with-the-greatest-number-of-candies/>
+<https://leetcode.com/problems/destination-city/>

@@ -6,17 +6,16 @@ logger = logging.getLogger(__name__)
 
 
 class Solution:
-    def kidsWithCandies(self, candies: List[int], extraCandies: int) -> List[bool]:
-        max_candies_num = 0
-        for c in candies:
-            if c >= max_candies_num:
-                max_candies_num = c
+    def destCity(self, paths: List[List[str]]) -> str:
+        sources = set([_[0] for _ in paths])
+        destinations = set([_[1] for _ in paths])
 
-        return [c + extraCandies >= max_candies_num for c in candies]
+        return list(destinations - sources)[0]
 
 
 def main():
-    assert Solution().kidsWithCandies([2,3,5,1,3], 3) == [True,True,True,False,True]
+    assert Solution().destCity([["London","New York"],["New York","Lima"],["Lima","Sao Paulo"]]) == "Sao Paulo"
+    assert Solution().destCity([["B","C"],["D","B"],["C","A"]]) == "A"
 
 
 if __name__ == '__main__':
