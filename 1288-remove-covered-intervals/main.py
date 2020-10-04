@@ -22,6 +22,8 @@ class Solution:
                     intervals = intervals[:i] + intervals[i+1:]
                     i -= 1
                     break
+                elif intervals[i][0] < intervals[j][0]:
+                    break
                 j += 1
             i += 1
 
