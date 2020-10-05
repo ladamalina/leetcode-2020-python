@@ -1,5 +1,9 @@
-# 567. Permutation in String
+# 438. Find All Anagrams in a String
 
-Given two strings s1 and s2, write a function to return true if s2 contains the permutation of s1. In other words, one of the first string's permutations is the substring of the second string.
+Given a string s and a non-empty string p, find all the start indices of p's anagrams in s.
+
+Strings consists of lowercase English letters only and the length of both strings s and p will not be larger than 20,100.
+
+The order of output does not matter.
 
 <https://leetcode.com/problems/permutation-in-string/>
